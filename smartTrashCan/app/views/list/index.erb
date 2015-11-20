@@ -1,0 +1,6 @@
+
+<ul class="list-group">
+<% @items.each do |item| %>
+	<%= "<li class='list-group-item'>-&nbsp;&nbsp;&nbsp;#{item.item}</li>".html_safe %>
+<% end %>
+</ul>

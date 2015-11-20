@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="stylesheet" id="ppstyle" type="text/css" href="style.css">
+
+
+    <%= stylesheet_link_tag 'bootstrap', 'bootstrap-theme', 'style.css' %>
+    <%= javascript_include_tag 'bootstrap.min', 'jquery', 'jquery-ujs' %>
+       <%= javascript_include_tag 'bootstrap.min', 'jquery', 'jquery-ujs', 'blocs.js' %>
+    
+    <title></title>
+</head>
+<body>
+<!-- Main container -->
+<div class="page-container">
+    
+<!-- Navigation Bloc -->
+<div class="bloc l-bloc bgc-white" id="nav-bloc">
+		<nav class="navbar row">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Save Dana Skulley</a>
+			</div>
+		</nav>
+</div>
+<!-- Navigation Bloc END -->
+
+<!-- bloc-1 -->
+<div class="bloc l-bloc bgc-white" id="bloc-1">
+	<div class="container bloc-lg">
+		<div class="row">
+			<div class="col-sm-6">
+				<h3 class="mg-sm">
+					Enter Clue
+				</h3>
+				<p class="mg-lg">
+					Help Coraline get her favorite bear back before it&rsquo;s too late! Once you find a tag you can scan it directly into the box below and discover your next clue!
+
+					<% if @findclue == 'none' %>
+					<div class='alert alert-danger' role='alert'><%= @message %></div>
+					<% end %>
+
+					<% if @found == true %>
+					<div class='alert alert-success' role='alert'>
+						Congrats! here is your clue: <br/>
+						<%= @findclue.riddle %>
+					</div>
+					<% end %>
+      
+<form id="lookup" action="/update" method="post">
+  <label for="tag">Tag:</label>
+  <input type="text" id="tag" name="tag" />
+ 
+<br /><br/>
+	<div class="form-actions">
+<input type="submit" value="Submit Clue" class="btn  btn-d  btn-lg" />
+</div>
+			</div>
+			<div class="col-sm-6">
+				<img class="img-responsive " src="images/camera.jpg" />
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-1 END -->
+
+<!-- Footer - bloc-2 -->
+<div class="bloc l-bloc bgc-white" id="bloc-2">
+	<div class="container bloc-lg">
+		<div class="col-xs-2 col-xs-offset-5">
+			<img src="images/adamprofile.jpg" class="img-responsive img-circle" />
+		</div>
+		<div class="col-sm-12 col-md-8 col-md-offset-2">
+			<h3 class="text-center ">
+				<i>Made by a jerk named Adam, 2015</i>
+			</h3>
+		</div>
+	</div>
+</div>
+<!-- Footer - bloc-2 END -->
+</div>
+<!-- Main container END -->
+
+</body>
+    
+<!-- Google Analytics -->
+
+<!-- Google Analytics END -->
+
+</html>

@@ -1,0 +1,35 @@
+
+<% error = @fridge.errors.include?(:barcode) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :barcode, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :barcode, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:barcode) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @fridge.errors.include?(:rfid) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :rfid, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :rfid, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:rfid) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @fridge.errors.include?(:onhand) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :onhand, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.check_box :onhand, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:onhand) : "Ex: a simple text" %></span>
+  </div>
+
+
+
+<div class="form-actions">
+
+  <%= f.submit pat(:save_and_continue), :class => 'btn btn-primary', :name => 'save_and_continue' %>
+  &nbsp;
+    <%= f.submit pat(:save), :class => 'btn btn-info' %>
+  &nbsp;
+  <%= link_to pat(:cancel), url(:fridges, :index), :class => 'btn btn-default' %>
+</div>

@@ -1,0 +1,10 @@
+---
+:orm: activerecord
+:test: none
+:mock: none
+:script: jquery
+:renderer: none
+:stylesheet: none
+:namespace: Savedana
+:migration_format: number
+:admin_renderer: erb

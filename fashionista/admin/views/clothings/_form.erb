@@ -1,0 +1,49 @@
+<% error = @clothing.errors.include?(:name) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :name, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :name, :class => 'form-control input-xlarge input-with-feedback', :autofocus => true %>
+    <span class='help-inline'><%= error ? f.error_message_on(:name) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @clothing.errors.include?(:description) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :description, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_area :description, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:description) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @clothing.errors.include?(:seen) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :seen, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :seen, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:seen) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @clothing.errors.include?(:rfid) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :rfid, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :rfid, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:rfid) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @clothing.errors.include?(:rank) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :rank, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :rank, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:rank) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+
+
+<div class="form-actions">
+  <%= f.submit pat(:save), :class => 'btn btn-primary' %>
+  &nbsp;
+  <%= f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue' %>
+  &nbsp;
+  <%= link_to pat(:cancel), url(:clothings, :index), :class => 'btn btn-default' %>
+</div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Shopping list</title>
+    <meta http-equiv="refresh" content="3">
+    <%= stylesheet_link_tag 'bootstrap', 'bootstrap-theme' %>
+    <%= javascript_include_tag 'bootstrap.min', 'jquery', 'jquery-ujs' %>
+    <style>
+    body {
+      max-width: 100%;
+      font-size: 1.2em;
+    }
+    h2 {
+    	color: #FFFFFF;
+    	text-align: center;
+    }
+    a {
+    	color: white;
+    	text-decoration: none;
+    }
+    a:hover { 
+    	color:white; 
+    	text-decoration: none;
+    }
+    a:visited { 
+    	color:white; 
+    	text-decoration: none;
+    }
+     </style>
+  </head>
+  <body>
+  	<nav class="navbar navbar-inverse">
+    <h2><a href="/" style="text-decoration:none">Shopping List</a></h2>
+     </nav>
+    <%= yield %>
+  </body>
+</html>

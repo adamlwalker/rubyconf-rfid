@@ -1,0 +1,33 @@
+<% error = @clues.errors.include?(:rfid) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :rfid, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :rfid, :class => 'form-control input-xlarge input-with-feedback', :autofocus => true %>
+    <span class='help-inline'><%= error ? f.error_message_on(:rfid) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @clues.errors.include?(:riddle) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :riddle, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_area :riddle, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:riddle) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @clues.errors.include?(:found) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :found, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.check_box :found, :class => 'form-control input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:found) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+
+
+<div class="form-actions">
+  <%= f.submit pat(:save), :class => 'btn btn-primary' %>
+  &nbsp;
+  <%= f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue' %>
+  &nbsp;
+  <%= link_to pat(:cancel), url(:clues, :index), :class => 'btn btn-default' %>
+</div>

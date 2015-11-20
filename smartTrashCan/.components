@@ -1,0 +1,10 @@
+---
+:orm: activerecord
+:test: none
+:mock: none
+:script: none
+:renderer: erb
+:stylesheet: none
+:namespace: SmartTrashCan
+:migration_format: number
+:admin_renderer: erb

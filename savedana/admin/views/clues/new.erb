@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs">
+  <li> <%= link_to tag_icon(:list, pat(:list)), url(:clues, :index) %></li>
+  <li class="active"> <%= link_to tag_icon(:plus, pat(:new)), url(:clues, :new) %></li>
+</ul>
+<div class="tabs-content">
+  <% form_for :clues, url(:clues, :create), :class => 'form-horizontal' do |f| %>
+    <%= partial 'clues/form', :locals => { :f => f } %>
+ <% end %>
+</div>

@@ -1,0 +1,14 @@
+source 'https://rubygems.org'
+
+gem 'rake'
+gem 'audite'
+
+gem 'bcrypt'
+gem 'activerecord', '>= 3.1', :require => 'active_record'
+gem 'activesupport'
+gem 'time_difference'
+gem 'sqlite3'
+gem 'rest-client'
+gem 'sucker_punch', '~> 1.0'
+
+gem 'padrino', '0.13.0'
